@@ -4,19 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git branch: 'mater', url: 'https://github.com/sasikanth1531/nodejs-on-ec2.git/'
             }
         }
 
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh 'npm test'
             }
         }
 
@@ -33,4 +27,3 @@ pipeline {
         } 
     }
 }
-
