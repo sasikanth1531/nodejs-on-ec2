@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: sasikanth/jenkins:latest
+        image: sasikanth777/jenkins:latest
         ports:
         - containerPort: 80
