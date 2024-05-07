@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'mater', url: 'https://github.com/sasikanth1531/nodejs-on-ec2.git/'
+                git branch: 'master', url: 'https://github.com/sasikanth1531/nodejs-on-ec2.git/'
             }
         }
 
