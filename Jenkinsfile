@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script {
                     dir('Kubernetes') {
-                        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                        withKubeConfig(credentialsId: 'k8s', disableConfigSubstitution: true) {
                             sh 'kubectl apply -f deployment.yml'
                             sh 'kubectl apply -f service.yml'
                         }
