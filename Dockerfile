@@ -2,6 +2,8 @@ FROM node:16
 
 WORKDIR /apps
 
+COPY package*.json ./
+
 RUN npm install
 
 ADD . .
