@@ -20,9 +20,9 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {   
-                        sh "docker build -t node:v1 ."
-                        sh "docker tag node:v1 sasikanth777/nodejs:latest"
-                        sh "docker push sasikanth777/nodejs:latest"
+                        sh "docker build -t nodejs:latest ."
+                        sh "docker tag node:v1 sasikanth777/jenkins:latest"
+                        sh "docker push sasikanth777/jenkins:latest"
                     }
                 }
             }
