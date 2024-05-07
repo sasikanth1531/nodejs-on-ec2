@@ -16,10 +16,10 @@ pipeline {
             }
         }
 
-        stage("Docker Build Push") {
+        stage('Docker Build Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {   
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                         sh "docker build -t nodejs:latest ."
                         sh "docker tag nodejs:latest sasikanth777/jenkins:latest"
                         sh "docker push sasikanth777/jenkins:latest"
@@ -34,7 +34,7 @@ pipeline {
                     dir('Kubernetes') {
                         withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
                             sh 'kubectl apply -f deployment.yml'
-                            sh 'kubectl apply -f service.yml'   
+                            sh 'kubectl apply -f service.yml'
                         }
                     }
                 }
