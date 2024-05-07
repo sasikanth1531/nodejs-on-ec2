@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:16
 
 WORKDIR /apps
 
@@ -6,6 +6,6 @@ RUN npm install
 
 ADD . .
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["node", "index.js"]
